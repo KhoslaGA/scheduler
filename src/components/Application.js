@@ -4,6 +4,7 @@ import "components/Application.scss";
 import "components/DayList";
 import DayList from "./DayList";
 import "components/InterviewerListItem"
+import "components/Appointment";
 
 const days = [
   {
@@ -49,7 +50,20 @@ export default function Application(props) {
         />
       </section>
       <section className="schedule">
-        {/* Replace this with the schedule elements durint the "The Scheduler" activity. */}
+        {dailyAppointments.map((appointment) => {
+          const interview = getInterview(state, appointment.interview);
+          return (
+            <Appointment
+              key={appointment.id}
+              id={appointment.id}
+              time={appointment.time}
+              interview={interview}
+              interviewers={interviewers}
+              bookInterview={bookInterview}
+              cancelInterview={cancelInterview}
+            />
+          );
+        })}<Appointment key="last" time="5pm" />
       </section>
     </main>
   );
