@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "components/Button";
 import InterviewerList from "components/InterviewerList";
-import { getByPlaceholderText } from "@testing-library/react";
+// import { getByPlaceholderText } from "@testing-library/react";
 // eslint-disable-next-line
 import { action } from "@storybook/addon-actions/dist/preview";
 
